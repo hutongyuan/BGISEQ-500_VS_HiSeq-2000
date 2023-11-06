@@ -40,36 +40,36 @@ cat 00_ref/* > 01_index/merge.fna
 4. Simulating 3M reads including 0.5% (15k) contamination
 ```
 cd 01_index
-bash ../sc_simulate_batch.sh -i 15 -o batch -p 200
-bash ../sc_merge_batch.sh -i 15 -o batch
+bash ../sc_simulate.sh -i 15 -p 200
+bash ../sc_merge.sh -i 15
 cd ..
 ```
 5. Simulating 3M reads including 1% (30k) contamination
 ```
 cd 01_index_1
-bash ../sc_simulate_batch.sh -i 30 -o batch -p 200
-bash ../sc_merge_batch.sh -i 30 -o batch
+bash ../sc_simulate.sh -i 30 -p 200
+bash ../sc_merge.sh -i 30
 cd ..
 ```
 6. Simulating 3M reads including 2% (60k) contamination
 ```
 cd 01_index_2
-bash ../sc_simulate_batch.sh -i 60 -o batch -p 200
-bash ../sc_merge_batch.sh -i 60 -o batch
+bash ../sc_simulate.sh -i 60 -p 200
+bash ../sc_merge.sh -i 60
 cd ..
 ```
 7. Simulating 3M reads including 4% (120k) contamination
 ```
 cd 01_index_4
-bash ../sc_simulate_batch.sh -i 120 -o batch -p 200
-bash ../sc_merge_batch.sh -i 120 -o batch
+bash ../sc_simulate.sh -i 120 -p 200
+bash ../sc_merge.sh -i 120
 cd ..
 ```
 8. Simulating 3M reads including 7% (210k) contamination
 ```
 cd 01_index_7
-bash ../sc_simulate_batch.sh -i 210 -o batch -p 200
-bash ../sc_merge_batch.sh -i 210 -o batch
+bash ../sc_simulate.sh -i 210 -p 200
+bash ../sc_merge.sh -i 210
 cd ..
 ```
 
