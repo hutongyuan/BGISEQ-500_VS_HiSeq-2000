@@ -14,6 +14,7 @@ conda install dwgsim
 -N number of read pairs
 -P a read prefix to prepend to each read name
 -d outer distance between the two ends for pairs [500]
+-z random seed
 ```
 2. Simulating three million reads for each genome (clean reads)
 ```
@@ -32,8 +33,8 @@ done
 mkdir 01_index
 cat 00_ref/* > 01_index/merge.fna
 ```
+4. Simulating 3M reads including 0.5% contamination
 ```
-
 mkdir mix_15k
 dwgsim -1 100 -2 100 -r 0 -R 0 -X 0 -e 0 -E 0 \
 -N 15000 -P mix merge.fna mix_15k/mix_15k
