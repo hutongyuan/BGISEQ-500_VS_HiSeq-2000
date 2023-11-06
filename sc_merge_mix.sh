@@ -1,9 +1,5 @@
 #!/bin/bash
-#SBATCH -p fat
-#SBATCH --nodes=1
-#SBATCH --ntasks=30
-#SBATCH --ntasks-per-node=30
-#SBATCH --mem=230G
+
 helpdoc(){
     cat <<EOF
 Description:
@@ -44,11 +40,10 @@ then
 fi
 
 # code
-x=${infile}
-mkdir add-${x}-mix
-for i in `ls 3m-${x}/`; do
-    mkdir add-${x}-mix/$i
-    zcat 3m-${x}/$i/${i}.bwa.read1.fastq.gz mix_${x}/mix_${x}.bwa.read1.fastq.gz > add-${x}-mix/$i/${i}.mixmix_1.fastq
-    zcat 3m-${x}/$i/${i}.bwa.read2.fastq.gz mix_${x}/mix_${x}.bwa.read2.fastq.gz > add-${x}-mix/$i/${i}.mixmix_2.fastq
-    echo -e "$i add mix done..."
+mkdir add-${infile}k-mix
+for i in `ls 3m-${infile}k/`; do
+    mkdir add-${infile}k-mix/$i
+    zcat 3m-${infile}k/$i/${i}.bwa.read1.fastq.gz mix_${infile}k/mix_${infile}k.bwa.read1.fastq.gz > add-${infile}k-mix/$i/${i}.mixmix_1.fastq
+    zcat 3m-${infile}k/$i/${i}.bwa.read2.fastq.gz mix_${infile}k/mix_${infile}k.bwa.read2.fastq.gz > add-${infile}k-mix/$i/${i}.mixmix_2.fastq
+    echo -e "$i done..."
 done
