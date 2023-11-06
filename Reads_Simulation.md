@@ -17,7 +17,7 @@ conda install dwgsim
 ```
 2. Simulating three million reads for each genome (clean reads)
 ```
-# 00_ref, fold file, NCBI downloaded reference genomes (postfix fna)
+# 00_ref, file fold, NCBI downloaded reference genomes (postfix fna)
 mkdir 3m
 cd 3m
 for i in `ls ../00_ref`; done
@@ -27,8 +27,13 @@ for i in `ls ../00_ref`; done
     -N 3000000 -P $base ../00_ref/$i 3m/$base/$base
 done
 ```
-3. 
+3. Mix all genomes together as contamination source 
 ```
+mkdir 01_index
+cat 00_ref/* > 01_index/merge.fna
+```
+```
+
 mkdir mix_15k
 dwgsim -1 100 -2 100 -r 0 -R 0 -X 0 -e 0 -E 0 \
 -N 15000 -P mix merge.fna mix_15k/mix_15k
