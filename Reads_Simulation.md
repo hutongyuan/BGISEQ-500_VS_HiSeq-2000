@@ -33,7 +33,6 @@ done
 mkdir 01_index
 mkdir 01_index_1
 mkdir 01_index_2
-mkdir 01_index_3
 mkdir 01_index_4
 mkdir 01_index_7
 cat 00_ref/* > 01_index/merge.fna
@@ -54,21 +53,21 @@ cd ..
 ```
 6. Simulating 3M reads including 2% (60k) contamination
 ```
-cd 01_index
+cd 01_index_2
 bash ../sc_simulate_batch.sh -i 60 -o batch -p 200
 bash ../sc_merge_batch.sh -i 60 -o batch
 cd ..
 ```
 7. Simulating 3M reads including 4% (120k) contamination
 ```
-cd 01_index
+cd 01_index_4
 bash ../sc_simulate_batch.sh -i 120 -o batch -p 200
 bash ../sc_merge_batch.sh -i 120 -o batch
 cd ..
 ```
 8. Simulating 3M reads including 7% (210k) contamination
 ```
-cd 01_index
+cd 01_index_7
 bash ../sc_simulate_batch.sh -i 210 -o batch -p 200
 bash ../sc_merge_batch.sh -i 210 -o batch
 cd ..
