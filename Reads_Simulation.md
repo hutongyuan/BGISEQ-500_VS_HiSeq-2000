@@ -33,13 +33,41 @@ done
 mkdir 01_index
 cat 00_ref/* > 01_index/merge.fna
 ```
-4. Simulating 3M reads including 0.5% contamination
+4. Simulating 3M reads including 0.5% (15k) contamination
 ```
-mkdir mix_15k
-dwgsim -1 100 -2 100 -r 0 -R 0 -X 0 -e 0 -E 0 \
--N 15000 -P mix merge.fna mix_15k/mix_15k
+cd 01_index
+bash ../sc_simulate_batch.sh -i 15 -o batch -p 200
+bash ../sc_merge_batch.sh -i 15 -o batch
+cd ..
 ```
-
+5. Simulating 3M reads including 1% (30k) contamination
+```
+cd 01_index
+bash ../sc_simulate_batch.sh -i 30 -o batch -p 200
+bash ../sc_merge_batch.sh -i 30 -o batch
+cd ..
+```
+6. Simulating 3M reads including 2% (60k) contamination
+```
+cd 01_index
+bash ../sc_simulate_batch.sh -i 60 -o batch -p 200
+bash ../sc_merge_batch.sh -i 60 -o batch
+cd ..
+```
+7. Simulating 3M reads including 4% (120k) contamination
+```
+cd 01_index
+bash ../sc_simulate_batch.sh -i 120 -o batch -p 200
+bash ../sc_merge_batch.sh -i 120 -o batch
+cd ..
+```
+8. Simulating 3M reads including 7% (210k) contamination
+```
+cd 01_index
+bash ../sc_simulate_batch.sh -i 210 -o batch -p 200
+bash ../sc_merge_batch.sh -i 210 -o batch
+cd ..
+```
 
 
 
