@@ -49,7 +49,7 @@ source /route/miniconda3/etc/profile.d/conda.sh
 conda activate base
 
 infile2=${infile}000
-## simulate batch2
+## simulate reads
 mkdir ecoli_${infile}k_${outfile}
 dwgsim -1 100 -2 100 -r 0 -R 0 -X 0 -e 0 -E 0 -z $otherp \
 -N $infile2 -P ecoli ../01_index/ecoli.fna ecoli_${infile}k_${outfile}/ecoli_${infile}k
