@@ -18,7 +18,7 @@ conda install dwgsim
 -d outer distance between the two ends for pairs [500]
 -z random seed
 ```
-2. Simulating three million reads for each genome (clean reads)
+2. Simulate three million reads for each genome (clean reads)
 ```
 # 00_ref, file fold, NCBI downloaded reference genomes (postfix fna)
 mkdir 3m
@@ -39,7 +39,7 @@ mkdir 01_index_4
 mkdir 01_index_7
 cat 00_ref/* > 01_index/merge.fna
 ```
-4. Simulating 3M reads including 0.5% (15k) contamination
+4. Simulate 3M reads including 0.5% (15k) contamination
 ```
 cd 01_index
 # simulating 3m-15k clean reads
@@ -54,7 +54,7 @@ bash ../sc_simulate.sh -i 15 -p 200
 bash ../sc_merge.sh -i 15
 cd ..
 ```
-5. Simulating 3M reads including 1% (30k) contamination
+5. Simulate 3M reads including 1% (30k) contamination
 ```
 cd 01_index_1
 # simulating 3m-30k clean reads
@@ -69,7 +69,7 @@ bash ../sc_simulate.sh -i 30 -p 200
 bash ../sc_merge.sh -i 30
 cd ..
 ```
-6. Simulating 3M reads including 2% (60k) contamination
+6. Simulate 3M reads including 2% (60k) contamination
 ```
 cd 01_index_2
 # simulating 3m-60k clean reads
@@ -84,7 +84,7 @@ bash ../sc_simulate.sh -i 60 -p 200
 bash ../sc_merge.sh -i 60
 cd ..
 ```
-7. Simulating 3M reads including 4% (120k) contamination
+7. Simulate 3M reads including 4% (120k) contamination
 ```
 cd 01_index_4
 # simulating 3m-120k clean reads
@@ -99,7 +99,7 @@ bash ../sc_simulate.sh -i 120 -p 200
 bash ../sc_merge.sh -i 120
 cd ..
 ```
-8. Simulating 3M reads including 7% (210k) contamination
+8. Simulate 3M reads including 7% (210k) contamination
 ```
 cd 01_index_7
 # simulating 3m-210k clean reads
