@@ -50,6 +50,6 @@ conda activate base
 infile2=${infile}000
 
 ## simulate reads
-mkdir mix_${infile}k_${outfile}
+mkdir mix_${infile}k
 dwgsim -1 100 -2 100 -r 0 -R 0 -X 0 -e 0 -E 0 -z $otherp \
--N $infile2 -P mix ../01_index/merge.fna mix_${infile}k_${outfile}/mix_${infile}k
+-N $infile2 -P mix ../01_index/merge.fna mix_${infile}k/mix_${infile}k
