@@ -54,3 +54,42 @@ for i in `ls ./ref_QUAST/ref/`; do
     echo -e "\033[32m $i done... \033[0m"
 done
 ```
+3. Extract relevant information of insertion and deletion from output
+3.1 InDel in BGISEQ-500 assemblies
+```
+plat="bgi"
+
+cd SNP
+touch snp_indel.summary
+echo -e "plat\tgenome\tsnv\tinsert\tdelete" > snp_indel.summary
+
+for i in `ls $plat/*.snps`; do
+    file=${i#${plat}/}
+    base=${file%.snps}
+    snp=`cat $i | sed '1,5d' | awk -F" " '{if($2!="."&&$3!=".") print $0}' | wc -l`
+    insert=`cat $i | sed '1,5d' | awk -F" " '{if($2=="."&&$3!=".") print $0}' | wc -l`
+    delete=`cat $i | sed '1,5d' | awk -F" " '{if($2!="."&&$3==".") print $0}' | wc -l`
+    echo -e "$plat\t$base\t$snp\t$insert\t$delete" >> snp_indel.summary
+    echo -e "\033[32m $i done... \033[0m"
+done
+```
+3.2 InDel in HiSeq assemblies
+```
+plat="illumina"
+
+cd SNP
+touch snp_indel.summary
+echo -e "plat\tgenome\tsnv\tinsert\tdelete" > snp_indel.summary
+
+for i in `ls $plat/*.snps`; do
+    file=${i#${plat}/}
+    base=${file%.snps}
+    snp=`cat $i | sed '1,5d' | awk -F" " '{if($2!="."&&$3!=".") print $0}' | wc -l`
+    insert=`cat $i | sed '1,5d' | awk -F" " '{if($2=="."&&$3!=".") print $0}' | wc -l`
+    delete=`cat $i | sed '1,5d' | awk -F" " '{if($2!="."&&$3==".") print $0}' | wc -l`
+    echo -e "$plat\t$base\t$snp\t$insert\t$delete" >> snp_indel.summary
+    echo -e "\033[32m $i done... \033[0m"
+done
+```
+
+
