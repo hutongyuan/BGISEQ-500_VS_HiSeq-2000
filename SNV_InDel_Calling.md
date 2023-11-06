@@ -6,21 +6,21 @@ conda activate xgenome
 conda install mummer
 conda install parsnp
 ```
-2. Preparing
+2. Prepare
 ```
 mkdir Variant
 mkdir Variant/Mummer
 mkdir Variant/Mummer/BGI
 mkdir Variant/Mummer/Illumina
 mkdir Variant/Parsnp
+# fna/Ref, file fold for downloaded reference genomes
 ```
-3. Using MUMMER to call variants
+3. Use MUMMER to call variants
 ```
 ## mummer
 conda activate mummer
 
 for i in `ls ./fna/Ref/`; do
-    # fna/Ref, reference genomes
     base=${i%.fna}
     # 1 aligning
     nucmer --mum -p ./Variant/Mummer/BGI/$base \
@@ -61,7 +61,7 @@ for i in `ls ../fna/Ref/`; do
     echo -e "\033[32m $i done... \033[0m"
 done
 ```
-5. Using parsnp to call variants
+5. Use parsnp to call variants
 ```
 conda activate parsnp
 # to acquire harvesttools
