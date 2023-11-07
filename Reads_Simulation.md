@@ -51,6 +51,7 @@ for i in `ls ../00_ref/`; do
 done
 # simulating 15k contaminated reads
 bash ../sc_simulate.sh -i 15 -p 200
+# mixing clean reads and contaminated reads
 bash ../sc_merge.sh -i 15
 cd ..
 ```
@@ -66,6 +67,7 @@ for i in `ls ../00_ref/`; do
 done
 # simulating 30k contaminated reads
 bash ../sc_simulate.sh -i 30 -p 200
+# mixing clean reads and contaminated reads
 bash ../sc_merge.sh -i 30
 cd ..
 ```
@@ -81,6 +83,7 @@ for i in `ls ../00_ref/`; do
 done
 # simulating 60k contaminated reads
 bash ../sc_simulate.sh -i 60 -p 200
+# mixing clean reads and contaminated reads
 bash ../sc_merge.sh -i 60
 cd ..
 ```
@@ -96,6 +99,7 @@ for i in `ls ../00_ref/`; do
 done
 # simulating 120k contaminated reads
 bash ../sc_simulate.sh -i 120 -p 200
+# mixing clean reads and contaminated reads
 bash ../sc_merge.sh -i 120
 cd ..
 ```
@@ -111,6 +115,7 @@ for i in `ls ../00_ref/`; do
 done
 # simulating 210k contaminated reads
 bash ../sc_simulate.sh -i 210 -p 200
+# mixing clean reads and contaminated reads
 bash ../sc_merge.sh -i 210
 cd ..
 ```
