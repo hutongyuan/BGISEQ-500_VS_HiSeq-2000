@@ -13,7 +13,9 @@ mkdir Variant/Mummer
 mkdir Variant/Mummer/BGI
 mkdir Variant/Mummer/Illumina
 mkdir Variant/Parsnp
-# fna/Ref, file fold for downloaded reference genomes
+# ./fna/Ref/, file fold for downloaded reference genomes
+# ./fna/BGI/, file fold for BGISEQ-500 assemblies
+# ./fna/Illumina/, file fold for HiSeq 2000 assemblies
 ```
 3. Use MUMMER to call variants
 ```
@@ -39,7 +41,7 @@ for i in `ls ./fna/Ref/`; do
     > ./Variant/Mummer/Illumina/${base}.snps
 done
 ```
-4. Extract information from outputs of MUMMER
+4. Extract information from MUMMER output
 ```
 # summary mummer
 rm Mummer/BGI/*fai*
@@ -80,7 +82,7 @@ for i in `ls ./fna/Ref/`; do
     -V ./Variant/Parsnp/$base/parsnp.vcf
 done
 ```
-6. Extract information from the outputs of Parsnp
+6. Extract information from Parsnp output
 ```
 rm -r Parsnp/*.fai
 
