@@ -44,7 +44,7 @@ then
 fi
 
 # code
-source /route/miniconda3/etc/profile.d/conda.sh
+source /ROUTE/hutongyuan/softwares/miniconda3/etc/profile.d/conda.sh
 conda activate base
 
 infile2=${infile}000
